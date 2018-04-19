@@ -21,9 +21,9 @@ class Stack {
 			std::cout << "Stack is empty!" << std::endl;
 			return -1;
 		} else {
-		int m=n;
-		n--;
-                return arr[m];
+			int m=n;
+			n--;
+			return arr[m];
             }  
        }
         
@@ -31,12 +31,12 @@ class Stack {
             return (n == -1) ? true:false; 
         }
         void print () {
-            for(int i=0; i<=n; i++) {
+		for(int i=0; i<=n; i++) {
                 std::cout << arr[i] << std::endl;
             }
-       	std::cout << "Is empty` " << isEmpty() << std::endl;
-	std::cout << "Stack have " << n+1 << " element." << std::endl;	
-        }
+		std::cout << "Is empty` " << isEmpty() << std::endl;
+		std::cout << "Stack have " << n+1 << " element." << std::endl;	
+	}
 };
 int main()
 {
