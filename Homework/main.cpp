@@ -14,5 +14,6 @@ int main() {
 	obj.find(7); 
 	obj.find(23);
 	obj.operator[](4);
+	obj.resize(12);
 	return 0;
 }

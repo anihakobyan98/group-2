@@ -4,6 +4,14 @@
 Vector::Vector() {
 	length = 10;
 	index = 0;
+	arr = new int[length * 2];
+}
+Vector::Vector(const Vector& a) {
+	length = a.length;
+	arr = a.arr;
+}
+Vector::~Vector() {
+	delete []arr;
 }
 
 int Vector::insert(int a) {
@@ -40,30 +48,24 @@ int Vector::operator[](int k) {
 		return arr[k];
 	}
 }
-/*
-int Vector::erace(int l) {
-int *arr = new int[length];
-int index.arr[length];
-for(int i = 0;i < length;++i) {
-	arr[i] = index.arr[i];
-	delete index.arr[i];
-	index.arr = arr;
-	length = l;
-}
-	return l;
-}
+
 
 int Vector::resize(int n) {
-	int m = 2 * n;
-	if(m == length) {
+	if(n == length) {
 		return 0;
 	} 
-	if(m < length) {
-		return erace(m);
+	if(n < length) {
+		std::cout << "Warning" << std::endl;
 	} else {
-		std::cout << "Warning!" << std::endl;
+		length = n;
+		_arr = new int [length * 2];
+		for(int i=0; i < length; i++) {
+			_arr[i] = arr[i];
+		}
+		delete []arr;
+		arr = _arr;
 	}
-}*/
+}
 bool Vector::isEmpty() {
 	if(index == 0) {
 		return true;
