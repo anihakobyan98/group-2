@@ -1,0 +1,86 @@
+1. Verify whether dhclient is running.
+
+/sbin/dhclient
+
+2. Display your current ip address(es).
+ifconfig
+
+3. Display the configuration file where this ip address is defined.
+
+cat /etc/network/interfaces
+
+4. Follow the nic configuration in the book to change your ip address from dhcp client tofixe. Keep the same ip address to avoid conflicts!
+
+vim /etc/network/interfaces
+
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+
+auto  eth0
+iface eth0 inet static
+address   170.20.51.69
+broadcast 10.42.189.207
+netmask   255.255.255.240
+gateway   170.20.51.1
+                     
+ifdown
+
+5.  Did  you  also  configure  the  correct  
+gateway
+  in  the  previous  question  ?  If  not,  then  do
+this now.
+6. Verify that you have a gateway.
+
+/sbin/route
+
+7. Verify that you can connect to the gateway, that it is alive.
+
+ping -c3 gateway
+
+8. Change the last two digits of your mac address.
+
+ifconfig enp2s0 | grep HWaddr
+sudo ifconfig enp2s0 hw ether 00:42:42:42:42:42
+ifconfig enp2s0 | grep HWaddr
+
+9. Which ports are used by http, pop3, ssh, telnet, nntp and ftp ?
+
+grep ^'http' /etc/services
+grep ^'pop3' /etc/services
+grep ^'ssh' /etc/services
+grep ^'telnet' /etc/services
+grep ^'nntp' /etc/services
+grep ^'ftp' /etc/services
+
+10. Explain why e-mail and websites are sent over tcp and not udp.
+
+Because udp faster, but not reliable for connection.
+
+11. Display the hostname of your computer.
+
+hostname
+
+12. Which ip-addresses did your computer recently have contact with 
+
+arp -a
+
+
+
+
+   				------SSH-------
+
+1.sudo apt install ssh
+2.grep Protocol /etc/ssh/ssh_config
+3.ssh student@172.20.51.68 //for exiting enter command exit in terminal
+4.scp ~/serverhosts vaheedgar@172.20.51.69:/etc/hosts.new
+5.scp vaheedgar@172.20.51.69:/etc/ /home/student/
+6.
+7.
+8.ssh-keygen -t rsa
+9.ls -l /etc/ssh/*
+10.ps -ef | ssh-agent
+11.man ssh-keygen
+man ssh-agent
+man ssh-add
+
