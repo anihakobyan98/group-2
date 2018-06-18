@@ -1,0 +1,170 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	min-height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width: 100%;
+}
+header {
+	background-image: url(bg.jpg);
+	height: 1000px;
+	width: 100%;
+	background-size: cover;
+	margin: 0 auto;	
+}
+.opacity-block{
+	background-color: rgba(67,167,255,0.5);
+	height: 1000px;
+	width: 100%;
+}
+
+.cv{
+	display: inline-block;
+	float: left;
+	min-height: 40%;
+	min-width: 40%;
+	right: 100px;
+    height: 700px;
+    width: 50%;
+ }
+ .cv-block{
+ 	margin:200px auto;
+ 	height: 500px;
+ 	width: 50%;
+ 	display: block;
+ 	float: right;
+ }
+ 
+.cv1,.cv2,.cv3,.cv4{
+	background: url(cv.png);
+	height: 220px;
+    width: 180px;
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+}
+.cv1{
+    z-index: 2;
+    margin: 181px -30px;
+}
+.cv2{
+    z-index: 3;
+    margin: 230px 125px;
+}
+.cv3 {
+    z-index: 4;
+    margin: 125px 58px;
+}
+.cv4 {
+    z-index: 5;
+    margin: 170px 220px;
+}
+.inf-but{
+	min-height: 40%;
+	min-width: 40%;
+	display: inline-block;
+	float: left;
+	height: 50%;
+	width: 50%;
+	margin: 220px auto;
+}
+.inform{
+	height: 50%;
+	width: 55%;
+	text-align: left;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 24px;
+}
+.button{
+	background-color: #40ce73eb;
+	color: #fff;
+	text-align: center;
+	height: 10%;
+	width: 20%;
+	border-radius: 15px;
+	outline: 0;
+    padding: 24px 12px; 
+    margin: 40px auto;
+    font-size: 23px;
+    cursor: pointer;
+    display: block;
+}
+.bg-main{
+	height: 400px;
+	width: 100%;
+	background-color: #ededed;
+}
+.users{
+	margin: 0 auto;
+	padding-top: 60px;
+	height: 200px;
+	width: 40%;
+}
+.user{
+    border: 6px solid #3b9ff1;
+    width: 180px;
+    height: 180px;
+    border-radius: 180px;
+    text-align: center;
+    margin-left: 250px;
+    float: left;
+    position: relative;
+}
+.users p{
+	padding-top: 64px;
+	color: #3b9ff1;
+	font-size: 45px;
+	font-weight: bold;
+}
+.circle{
+	background-color: #fff;
+    width: 180px;
+    height: 180px;
+    float: left;
+    border-radius: 150px;
+}
+.text{
+    width: 100px;
+    color: #313131;
+    float: left;
+}
+.text p{
+	text-transform: uppercase;
+	text-align: center;
+}
+.footer{
+	height: 500px;
+	width: 100%;
+	position: absolute;
+	
+}
+.items1{
+    height: 50%;
+    margin: 70px auto 0;
+	width: 50%;
+}
+.items2{
+	height: 50%;
+	margin: 0 auto;
+	width: 40%;
+}
+
+img{
+    display: inline-block;
+    height: 200px;
+    margin-left: 250px;
+    float: left;
+}
+
+.items1 img, .items2 img{
+	height: 200px;
+    border-radius: 100px;
+    border: 4px solid #f3a426;
+}
