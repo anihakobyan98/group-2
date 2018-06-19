@@ -1,0 +1,96 @@
+ex.1.
+Stexcel swap partition, chapy poxel arden installed systemi.
+
+df -h
+sudo fallocate -l 1G /swapfile
+ls -lh /swapfile 
+sudo mkswap /swapfile
+sudo swapon --show
+free -h
+sudo cp /etc/fstab /etc/fstab.bak
+echo '/swapfile none swap 0 0' | sudo tee -a /etc/fstab
+cat /proc/sys/vm/swappiness 
+sudo sysctl vm.swappiness=10
+sudo nano /etc/sysctl.conf 
+Added - vm.swappiness=10
+
+cat proc/sys/vm/vfs_cache_pressure 
+sudo sysctl vm.vfs_cache_pressure =50
+sysctl: malformed setting "=50"
+sudo nano /etc/sysctl.conf 
+Added - vm.vfs_cache_pressure =50
+
+Or
+
+free -h
+sudo dd if=/dev/sda6 of=/media/swapfile.img bs=1024 count=1M
+sudo chmod 600 /media/swapfile.img
+sudo mkswap /media/swapfile.img
+sudo vim /etc/fstab
+Added - /media/swapfile.img swap swap sw 0 0
+sudo swapon /media/swapfile.img
+
+
+
+Ex.2. 
+Inch vor cragir ashxatecnel boot processi jamanak.
+
+cd var/tmp/
+sudo touch script.sh
+sudo chmod 777 script.sh 
+vim script.sh 
+cd ../../etc/systemd/system/
+sudo touch sample.service
+sudo chmod 777 sample.service 
+vim sample.service 
+systemctl daemon-reload 
+systemctl enable sample.service 
+systemctl start sample.service 
+sustemctl reboot
+
+Ex.3. Runlevels
+who -r
+init 3
+vim /etc/init/rc-sysinit.conf
+	env DEFAULT_RUNLEVEL=4
+reboot
+
+Ex.4.
+Pntrel texty xory nerdrvacutyamb directroy-i mej, sortavorel ardyunqy ev gcel file-i mej.
+
+grep -rl 'system' | sort -n >> result.txt
+
+
+Ex.5. Stexcel 3 user, 3 group, usernerin tarber groupneri mej gcel, userneric mekin tal sudo hnaravorutyun, groupnerin tarber permissionner tal.
+
+sudo groupadd group1
+groupadd: group 'group1' already exists
+sudo useradd -G group1 user1
+sudo useradd -G group1 user2
+sudo groupadd group2
+sudo usermod -a -G group2 user2 
+sudo useradd -G group2 user3
+sudo groupadd group3
+sudo usermod -a -G group3 user1
+sudo usermod -a -G group3 user3
+
+cd workspace/
+mkdir folder1
+mkdir folder2 folder3
+chmod 774 folder2
+chmod 665 folder3
+sudo chown user1:group3 folder3
+chmod 333 folder2
+
+sudo visudo
+
+user1 ALL=(ALL:ALL) ALL
+
+
+
+
+
+
+
+
+
