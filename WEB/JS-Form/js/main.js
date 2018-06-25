@@ -16,9 +16,7 @@ function newpage() {
     }
      
 }
-function header(){
-	if (document.getElementsBy)	
-}
+
 function myFunction() {
     //x = document.getElementById("name").value;
     Name = document.getElementsByTagName("input")[0].value
