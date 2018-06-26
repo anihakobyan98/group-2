@@ -1,17 +1,14 @@
-
-// function newpage() {
-//     var x = document.getElementById("form1");
-//     if (x.style.display === "block") {
-//         x.style.display = "none";
-//     } else {
-//         x.style.display = "block";
-//     }
-     
-// }
 jQuery(document).ready(function($) {
-    $("#myModal").modal('show');
+    if (sessionStorage.getItem("name")== null && sessionStorage.getItem("lastname")== null  && sessionStorage.getItem("gender")== null) {
+        $("#myModal").modal('show');
+    } else {
+        load();
+    }
+     if (sessionStorage.getItem("area")) {
+        var res = sessionStorage.getItem("area");
+        $("#area").html(res);
+    }
   });
-var count = 0;
 function newpage() {  
     if(document.getElementById('male').checked) {
         $("#info").html("Mr.");
@@ -21,6 +18,7 @@ function newpage() {
     }
     $("#info").append(" " + $("#name").val() + " ");
     $("#info").append($("#lastname").val());
+    save();
 }
  function addFunction() {
      var add = "Address: " + $("#address").val();
@@ -36,20 +34,28 @@ function newpage() {
          }
          content += "</table>"
          $('#area').append(content); 
-     $("#form2")[0].reset();
+         sessionStorage.setItem("area",  $("#area").html());
      }
-// window.onload = function saveSettings() {
-//     var name = document.getElementById("name").value;
-//     var lastname = document.getElementById("lastname").value;
-//     var gender = document.getElementById("gender").value;
-//     if (document.getElementById("lastname").checked) {
-//         gender = "Mister";
-//     } else if(document.getElementById("lastname").checked) {
-//         gender = "Misis";
-//     }
-//     ​var test = { name: name, lastname: lastname, gender: gender }​​​​​​​;
-//     localStorage.setItem("test", JSON.stringify(test));
-//     var test2 = localStorage.getItem("test");
-//     test = JSON.parse(test2);
-// }
+function load() {
+        var name = sessionStorage.getItem("name");
+        var lastname = sessionStorage.getItem("lastname");
+        if (sessionStorage.getItem("gender") == "Male") {
+            $("#modal").html("Mr.");
+        } else {
+            $("#modal").html("Mrs.");
+        }
+        $("#modal").text($("#modal").html() + " " + name + " " + lastname);
 
+}
+function save() {
+    if ($("#male").checked) {
+        gender = "Male";
+    }
+    else {
+        gender = "Female";
+    }
+    sessionStorage.setItem("name", $("#name").val());
+    sessionStorage.setItem("lastname", $("#lastname").val());
+    sessionStorage.setItem("gender", gender);
+    load();
+}
