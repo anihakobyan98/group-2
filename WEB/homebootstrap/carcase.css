@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+}
+.first-etap {
+    margin: 0;
+    padding: 0;
+    height: 80vh;
+    background: url(photos/layer-19.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.bg-image {
+    height: 80vh;
+    background-color: rgba(0,0,0,0.46);
+}
+.h1 span{
+    color: #ffc100;
+}
+.h1 {
+    color: #ccc;
+}
+.text {
+    font-size: 8vmin;
+    color: #FFF;
+}
+.text span {
+    color: #ffc100;
+}
+.how {
+    font-size: 30px;
+    color: #FFF;
+}
+.arrow {
+    font-size: 30px;
+    color: #FFF;
+}
