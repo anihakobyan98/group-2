@@ -309,6 +309,12 @@ footer {
 }
 .bottom-line {
 	background-color: white;
-	height: 2px;
-	margin: 15px;
+	height: 1px;
+	margin:25px auto;
+	width: 15%;
+	text-align: center;
+}
+.list-link li {
+	list-style-type: none;
+	display: inline-block;
 }
